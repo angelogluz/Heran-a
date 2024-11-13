@@ -1,4 +1,5 @@
 import { Cliente } from "./Cliente";
+import { Fornecedor } from "./Fornecedor";
 import { StatusEnum } from "./Usuario";
 
 
@@ -13,5 +14,9 @@ export class Funcionario extends Cliente{
 
     public desligarFuncionario(){
         this.status = StatusEnum.INATIVO;
+    }
+
+    public desativaFornecedor(fornecedor: Fornecedor){
+        fornecedor.status = StatusEnum.INATIVO;
     }
 }
