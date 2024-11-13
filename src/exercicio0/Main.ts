@@ -12,11 +12,11 @@ const usuarios: Usuario[] = [];
 for (let index = 0; index < 20; index++) {
     const nomeGerado = faker.person.fullName();
     const funcionario: Funcionario = geraUsuario(nomeGerado) as Funcionario;
-    funcionario._nome = nomeGerado;
+    funcionario.nome = nomeGerado;
 
     const nomeFornecedor = faker.company.name();
     const fornecedor: Fornecedor = geraUsuario(nomeFornecedor) as Fornecedor;
-    fornecedor._nome = nomeFornecedor;
+    fornecedor.nome = nomeFornecedor;
 
     usuarios.push(funcionario)
     usuarios.push(fornecedor)
@@ -31,7 +31,6 @@ function geraUsuario(nomeGerado: string){
             firstName: partesNome[0],
             lastName: partesNome[partesNome.length - 1]
         })
-
         , faker.internet.password(), "" + new Date().getTime())
 
         return usuario;
